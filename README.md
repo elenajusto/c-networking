@@ -1,3 +1,68 @@
 # C-Networking
 Try to learn networking by making web server in C.
 
+### Important functions
+```sh
+getaddrinfo()
+```
+
+```sh
+memset()
+```
+
+### Layers in Networking
+- Network Access -> Physical layer
+- Internet -> Sending/Routing of data packets
+- Host to Host -> Network programming, protocols, connections
+- Process/Application -> Presented to user
+
+Programming occurs in the Host to Host Layer.
+
+### Internet Protocol (IP)
+- IPv4
+- 32 bit address
+- 0.0.0.0 to 255.255.255.255
+
+- IPv6
+- 128 bit address
+- 3*10^38 addresses
+
+- Code is usually specific to IPv4 or IPv6. However you can code for both using a "dual stack configuration".
+
+### IP Protocl Suite
+- TCP (Transmission Control Protocol)
+- Streaming
+- Data sent in sequence
+
+- UDP (User Datagram Protocl)
+- Connectionless
+
+- TCP or UDP must be set when writing networking code.
+
+### Network Adresses and Ports
+IP Addresses reserved for local networks tend to fall into the following bins:
+- 10.0.0.0 to 10.255.255.255 (the ten's)
+- 172.16.0.0 to 172.31.255.255 (the 172's)
+- 192.168.0.0 to 192.168.255.255 (the 192.168's)
+
+Local router assigns each device connected to it an address from one of the above ranges -> Device's "public address".
+
+Devices can have both an IPv4 and IPv6 address.
+
+Subnet Masks:
+- IPv4 have a /
+- IPv6 have a %
+
+Ports
+- 16 bits wise
+- Endpoint for a device that allows communication
+- Port 1 to Port 1023 -> System ports
+- Port 1024 to 49151 -> Registered ports
+- Port 49152 to 65535 -> Dynamic, Private or Ephemeral
+
+View list of ports with
+```sh
+cd ~/etc
+
+less services
+```
