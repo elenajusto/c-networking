@@ -51,7 +51,9 @@ Devices can have both an IPv4 and IPv6 address.
 
 Subnet Masks:
 - IPv4 have a /
+-> 192.168.0.0/16
 - IPv6 have a %
+-> fe80::8cc1%9
 
 Ports
 - 16 bits wise
