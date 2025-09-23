@@ -102,3 +102,16 @@ Client: Web browser accepts data and displays webpage
 5. Establish link to client `accept()`
 6. Exchange data with client `send()` and `recv()`
 7. Close endpoint `close()`
+
+#### Writing a UDP client
+1. `getaddrinfo()`
+2. `socket()`
+3. `sendto()` and `recvfrom()` - Notice there is no need to establish a connction. UDP is a connectionless protocol.
+4. `close()`
+
+#### Writing a UDP server
+1. `getaddrinfo()`
+2. `socket()`
+3. `bind()`
+4. `recvfrom()` and `sendto()`
+5. `close()`
