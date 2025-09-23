@@ -68,3 +68,37 @@ cd ~/etc
 
 less services
 ```
+
+### Client/Server roles
+Running a program on a network enters the realm of "Distributed Applications"
+
+Server: Sends data to computer over the internet
+
+Client: Web browser accepts data and displays webpage
+
+### Socket Programming
+- A socket is a communications endpoint that works like a file handler
+- Linux can use standard I/O functions for socket communications
+- Similar to file handlers, you close socket when done
+
+- Windows uses Winsock which works differently to Linux and Mac
+- Network code is not compatible between operating systems
+
+- TCP and UDP have different ways of being written
+- Clients and servers have different ways of being written
+
+#### Writing a TCP client
+1. Get host information `getaddrinfo()`
+2. Create a socker `socket()`
+3. Connect socket with the host `connect()`
+4. Use send/recieve functions `send()` and `recv`
+5. Close the socket `close()`
+
+#### Writing a TCP server
+1. Configure the server's address, port and protocol `getaddrinfo()`
+2. Create communications endpoint `socker()`
+3. Bind the socket to address and port `bind()`
+4. Listen for incoming connections `listen()`
+5. Establish link to client `accept()`
+6. Exchange data with client `send()` and `recv()`
+7. Close endpoint `close()`
