@@ -158,3 +158,14 @@ struct addrinfo {
     struct addrinfo *ai_next; /* next item in list */
 }
 ```
+
+### Opening a socket
+```C
+int socket(int domain, int type, int protocol);
+```
+- `int domain`: Literal `AF_INET` (for IPv4) and `AF_INET6` (for IPv6)
+- `int type`: Lieteral `SOCK_STREAM` (TCP) or `SOCK_DGRAM` (UDP)
+- `int protocol`: 0 for IP protocol or go to `/etc/protocols` to see 
+- Returns a socket file descriptor
+- Returns -1 for failure
+- Must be closed when communications are complete
