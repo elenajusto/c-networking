@@ -115,3 +115,46 @@ Client: Web browser accepts data and displays webpage
 3. `bind()`
 4. `recvfrom()` and `sendto()`
 5. `close()`
+
+### Role of the `getaddrinfo()` function
+- Used to setup and configure a connection
+- Used to setup servers and clients
+- Compatible with TCP and UDP
+
+```C
+int getaddrinfo(const char *hostname, const char *servname, const struct addrinfo *hints, struct addrinfo **res);
+```
+
+Where:
+`*hostname` is a string representing the network host, name or IP address
+- String such as `yahoo.com`
+- IPv4 or IPv6 address such as `127.0.0.1`
+- If zero or null, local system is used `0` or `NULL`
+
+`*servname` string representing the service or port
+- Is a service
+- Port number such as `21`
+- Srevice name such as `FTP`
+- Stored in `/etc/services` file
+
+`*hints` a structure that configures the connection
+- Init to `0` before members are assigned to prevent garbage memory items from coming in
+- Members are set to configure host or client
+
+`**res` a structure that stores the results
+- Filled with information about the connection
+- `freeaddrinfo()` releases memory used by `*res` structure
+
+#### The `struct addrinfo` structure
+```C
+struct addrinfo {
+    int ai_flags;             /* input flags */
+    int ai_family;            /* socket protocol family */
+    int ai_socketype;         /* socket type */
+    int ai_protocol;          /* protocl for socket */
+    socketlen_t ai_addrlen;   /* socket address length */
+    struct sockaddr *ai_addr; /* socket address */
+    char *ai_canonname;       /* service name */
+    struct addrinfo *ai_next; /* next item in list */
+}
+```
